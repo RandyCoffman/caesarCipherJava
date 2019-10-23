@@ -15,14 +15,24 @@ public class Main {
         System.out.println("Do you want to encrypt or decrypt the message?");
         String choice = sc.nextLine();
         switch(choice.toLowerCase()) {
-            case "encrypt":
+            case "encrypt": case "e":
                 newMessage.encrypt(message,shiftNum);
                 break;
-            case "decrypt":
+            case "decrypt": case "d":
                 newMessage.decrypt(message,shiftNum);
                 break;
             default:
+                System.out.println("invalid input!");
                 main(null);
+        }
+        System.out.println("Do you want to do another message?");
+        String redoChoice = sc.nextLine();
+        switch(redoChoice.toLowerCase()) {
+            case "yes": case "y":
+                main(null);
+                break;
+            default:
+                System.exit(0);
         }
     }
 }

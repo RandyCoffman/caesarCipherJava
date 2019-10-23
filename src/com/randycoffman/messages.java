@@ -68,5 +68,4 @@ public class messages {
         }
         System.out.println("Decrypted message: " + newText);
     }
-
 }
