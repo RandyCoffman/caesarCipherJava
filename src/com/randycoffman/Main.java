@@ -6,6 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        messages newMessage = new messages();
         System.out.println("Input the message");
         String message = sc.nextLine();
         System.out.println("Input encryption key (1-26)");
@@ -15,12 +16,10 @@ public class Main {
         String choice = sc.nextLine();
         switch(choice.toLowerCase()) {
             case "encrypt":
-                encryptMessage em = new encryptMessage();
-                em.encrypt(message,shiftNum);
+                newMessage.encrypt(message,shiftNum);
                 break;
             case "decrypt":
-                decryptMessage dm = new decryptMessage();
-                dm.decrypt(message,shiftNum);
+                newMessage.decrypt(message,shiftNum);
                 break;
             default:
                 main(null);
